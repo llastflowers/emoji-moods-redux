@@ -37,31 +37,31 @@ describe('Moods', () => {
     });
 
     it('is very angry if tired and hungry', () => {
-      expect(getFace({ coffees: 0, naps: 0, snacks: 0 })).toEqual('🤬');
+      expect(getFace({ coffees: 0, naps: 0, snacks: 0 })).toEqual('>:(');
     });
 
     it('is sick if hyper and hungry', () => {
-      expect(getFace({ coffees: 4, snacks: 0 })).toEqual('🤮');
+      expect(getFace({ coffees: 4, snacks: 0 })).toEqual('O_O');
     });
 
     it('is sleeping if tired', () => {
-      expect(getFace({ coffees: 4, snacks: 0 })).toEqual('🤮');
+      expect(getFace({ coffees: 0, snacks: 2, naps: 0 })).toEqual('-_-');
     });
 
     it('is crazy if hyper', () => {
-      expect(getFace({ coffees: 4, naps: 0, snacks: 0, studies: 0 })).toEqual('🤮');
+      expect(getFace({ coffees: 4, naps: 0, snacks: 4, studies: 0 })).toEqual('@_@');
     });
 
     it('is mindblown if educated', () => {
-      expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 3 })).toEqual('🤯');
+      expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 3 })).toEqual('O.O');
     });
 
     it('is angry if hungry', () => {
-      expect(getFace({ coffees: 1, naps: 0, snacks: 0, studies: 0 })).toEqual('😡');
+      expect(getFace({ coffees: 1, naps: 0, snacks: 0, studies: 0 })).toEqual('x_x');
     });
 
     it('is happy if not tired, hungry, educated, or hungry', () => {
-      expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 0 })).toEqual('😀');
+      expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 0 })).toEqual('OwO');
     });
   });
 
@@ -69,34 +69,6 @@ describe('Moods', () => {
     it('matches a snapshot', () => {
       const wrapper = shallow(<Moods />);
       expect(wrapper).toMatchSnapshot();
-    });
-
-    it('updates state on DRINK_COFFEE selection', () => {
-      const wrapper = shallow(<Moods />);
-      wrapper.instance().handleSelection('DRINK_COFFEE');
-
-      expect(wrapper.state('coffees')).toEqual(1);
-    });
-
-    it('updates state on TAKE_NAP selection', () => {
-      const wrapper = shallow(<Moods />);
-      wrapper.instance().handleSelection('TAKE_NAP');
-
-      expect(wrapper.state('naps')).toEqual(1);
-    });
-
-    it('updates state on EAT_SNACK selection', () => {
-      const wrapper = shallow(<Moods />);
-      wrapper.instance().handleSelection('EAT_SNACK');
-
-      expect(wrapper.state('snacks')).toEqual(1);
-    });
-
-    it('updates state on STUDY selection', () => {
-      const wrapper = shallow(<Moods />);
-      wrapper.instance().handleSelection('STUDY');
-
-      expect(wrapper.state('studies')).toEqual(1);
     });
   });
 });
