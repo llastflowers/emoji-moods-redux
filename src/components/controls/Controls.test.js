@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Controls from './Controls';
+import Provider from 'react-redux';
+import store from '../../store';
 
 describe('Controls component', () => {
   let wrapper;
@@ -12,9 +14,10 @@ describe('Controls component', () => {
     ];
     handleSelection = jest.fn();
 
-    wrapper = shallow(<Controls
+    const wrapper = shallow(<Provider store={store}><Controls
       actions={actions}
-      handleSelection={handleSelection} />);
+      handleSelection={handleSelection} /></Provider>).dive;
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('renders Controls', () => {
