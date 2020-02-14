@@ -1,35 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Moods container matches a snapshot 1`] = `
+exports[`container matches a snapshot 1`] = `
 <Fragment>
-  <Controls>
-    <button
-      onClick={[Function]}
-    >
-      coffee - 
-      0
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      snacks - 
-      0
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      naps - 
-      0
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      studies - 
-      0
-    </button>
-  </Controls>
-  <Face
-    emoji=">:("
-  />
+  <Controls />
+  <Face />
 </Fragment>
 `;
