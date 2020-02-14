@@ -1,5 +1,5 @@
 const { createStore } = require('redux');
-import reducer from './reducers/moodReducer';
+import reducer from './reducers/emojiActionReducer';
 
 export default createStore(
   reducer,
