@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Controls component renders Controls 1`] = `undefined`;
+exports[`Controls component renders Controls 1`] = `[Function]`;
+
+exports[`Controls component renders Controls 2`] = `undefined`;

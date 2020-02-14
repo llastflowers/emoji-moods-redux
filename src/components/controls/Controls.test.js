@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Controls from './Controls';
-import Provider from 'react-redux';
+import { Provider } from 'react-redux';
 import store from '../../store';
 
 describe('Controls component', () => {
@@ -22,11 +22,6 @@ describe('Controls component', () => {
 
   it('renders Controls', () => {
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('handlesSelection with the action name', () => {
-    wrapper.findWhere(el => el.key() === 'DO_STUFF').simulate('click');
-    expect(handleSelection).toHaveBeenCalledWith('DO_STUFF');
   });
 });
   
